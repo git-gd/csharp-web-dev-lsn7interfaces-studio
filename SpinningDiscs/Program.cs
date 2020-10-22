@@ -6,9 +6,16 @@ namespace SpinningDiscs
     {
         static void Main(string[] args)
         {
-            // TODO: Declare and initialize a CD and a DVD object.
+            CD audioDisc = new CD(750, "Audio", "♫ Hot For Teacher ♫ ...", "The Best Of The 80s Hair Bands", "1) Van Halen - Hot For Teacher");
+            DVD movieDisc = new DVD(750, "Video", "(•_•) / ( •_•)>⌐□-□ / (⌐□_□)", "CSI: Miami - Season 1", "Episode 1: 	\"Golden Parachute\"");
 
-            // TODO: Call each CD and DVD method to verify that they work as expected.
+            Console.OutputEncoding = System.Text.Encoding.UTF8;
+
+            audioDisc.PlaySong();
+
+            Console.WriteLine();
+
+            movieDisc.PlayVideo();
         }
     }
 }

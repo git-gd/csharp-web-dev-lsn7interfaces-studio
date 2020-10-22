@@ -1,11 +1,24 @@
 ﻿using System;
 namespace SpinningDiscs
 {
-    public class CD
+    public class CD : Disc
     {
-        // TODO: Implement your custom interface.
+        public CD(int capacity, string discType, string data, string name, string contents) : base(capacity, discType, data, name, contents)
+        {
+        }
 
-        // TODO: Determine which fields, methods, and constructors can be extended from the base class and which ones
-        //  need to be declared separately. 
+        public void PlaySong()
+        {
+            if (!IsSpinning)
+            {
+                SpinDisc();
+                OnLoad();
+            }
+            Read();
+            Console.WriteLine($"Now listening to {Contents}:");
+            Console.ForegroundColor = ConsoleColor.Magenta;
+            Console.WriteLine(Data);
+            Console.ResetColor();
+        }
     }
 }
